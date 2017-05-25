@@ -1,0 +1,7 @@
+<resources>
+    <string name="sha1_key">48:EC:88:54:0F:3D:EC:43:2D:2E:21:46:D9:8D:72:1C:02:AC:3E:98</string>
+    <string name="app_name">Notifications</string>
+    <string name="title_main_activity">FCM Notifications</string>
+    <string name="text_fcm">FCM Reg Id: </string>
+    <string name="text_fcm_reg_error">Firebase Reg Id is not received yet!</string>
+</resources>

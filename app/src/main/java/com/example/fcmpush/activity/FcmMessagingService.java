@@ -5,7 +5,7 @@ import com.google.firebase.messaging.RemoteMessage;
 import com.kaaylabs.fcm.push.FcmManager;
 
 
-public class MyFirebaseMessagingService extends FirebaseMessagingService {
+public class FcmMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {

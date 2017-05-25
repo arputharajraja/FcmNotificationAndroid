@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements FcmListener {
 
     // Fetches reg id from shared preferences
     // and displays on the screen
-    private void displayFirebaseRegId() {
+    private void displayFireBaseRegId() {
         SharedPreferences pref = getApplicationContext().getSharedPreferences(Config.SHARED_PREF, 0);
         String regId = pref.getString(Constants.SHARED_KEY_TOKEN, null);
 
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements FcmListener {
         super.onResume();
         FcmManager.getInstance(this).registerListener(this);
 
-        displayFirebaseRegId();
+        displayFireBaseRegId();
     }
 
     @Override
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements FcmListener {
         if (!NotificationUtils.isAppIsInBackground(getApplicationContext())) {
             // app is in foreground, broadcast the push message
             Intent pushNotification = new Intent(Config.PUSH_NOTIFICATION);
-            pushNotification.putExtra(AppConstants.MESSAGE, message);
+            pushNotification.putExtra(FcmMessageConstants.MESSAGE, message);
             LocalBroadcastManager.getInstance(this).sendBroadcast(pushNotification);
 
             // play notification sound
@@ -119,21 +119,21 @@ public class MainActivity extends AppCompatActivity implements FcmListener {
         Log.e(TAG, "push json: " + json.toString());
 
         try {
-            String title = json.getString(AppConstants.NOTIFICATION_TITLE);
-            String message = json.getString(AppConstants.MESSAGE);
-            String imageUrl = json.getString(AppConstants.NOTIFICATION_IMAGE);
+            String title = json.getString(FcmMessageConstants.NOTIFICATION_TITLE);
+            String message = json.getString(FcmMessageConstants.MESSAGE);
+            String imageUrl = json.getString(FcmMessageConstants.NOTIFICATION_IMAGE);
             String timestamp = String.valueOf(json.getLong("timestamp"));
 
-            Log.e(TAG, AppConstants.NOTIFICATION_TITLE + " : " + title);
-            Log.e(TAG, AppConstants.MESSAGE+" : " + message);
-            Log.e(TAG, AppConstants.NOTIFICATION_IMAGE +": " + imageUrl);
-            Log.e(TAG, AppConstants.NOTIFICATION_TIME +": " + timestamp);
+            Log.e(TAG, FcmMessageConstants.NOTIFICATION_TITLE + " : " + title);
+            Log.e(TAG, FcmMessageConstants.MESSAGE + " : " + message);
+            Log.e(TAG, FcmMessageConstants.NOTIFICATION_IMAGE + ": " + imageUrl);
+            Log.e(TAG, FcmMessageConstants.NOTIFICATION_TIME + ": " + timestamp);
 
 
             if (NotificationUtils.isAppIsInBackground(getApplicationContext())) {
                 // app is in foreground, broadcast the push message
                 Intent pushNotification = new Intent(Config.PUSH_NOTIFICATION);
-                pushNotification.putExtra(AppConstants.MESSAGE, message);
+                pushNotification.putExtra(FcmMessageConstants.MESSAGE, message);
                 LocalBroadcastManager.getInstance(this).sendBroadcast(pushNotification);
 
                 // play notification sound
@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements FcmListener {
             } else {
                 // app is in background, show the notification in notification tray
                 Intent resultIntent = new Intent(getApplicationContext(), MainActivity.class);
-                resultIntent.putExtra(AppConstants.MESSAGE, message);
+                resultIntent.putExtra(FcmMessageConstants.MESSAGE, message);
 
                 // check for image attachment
                 if (TextUtils.isEmpty(imageUrl)) {

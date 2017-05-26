@@ -4,14 +4,12 @@
     package="com.example.fcmpush">
 
     <application
-        tools:replace = "android:name"
         android:name=".activity.FcmApp"
-        android:allowBackup="false"
+        tools:replace = "android:name"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:fullBackupContent="true">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/title_main_activity">
@@ -21,6 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <service android:name=".activity.FcmMessagingService" android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

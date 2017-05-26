@@ -1,12 +1,8 @@
 
 p
 @app/src/main/java/com/example/fcmpush/activity/MainActivity.java,1/a/1a408b004bfd4ba10f509bfbb170e7b8bc8b6619
-~
-Napp/src/main/java/com/example/fcmpush/activity/MyFirebaseMessagingService.java,8/e/8e4ef021a23fc0c7f98d7db33f9df9607cbd03d1
 j
 :app/src/main/java/com/example/fcmpush/activity/FcmApp.java,3/e/3ee63c5f8e46d0e1ff2124df3da352b7fbdef2e9
-p
-@app/src/main/java/com/example/fcmpush/activity/AppConstants.java,e/a/ea6c6663253486bf43b6b1b014cd10dd70c27e1a
 w
 Gapp/src/main/java/com/example/fcmpush/activity/FcmMessageConstants.java,e/f/ef13eb242c50545718e12ed11c46a8b663315ee6
 w

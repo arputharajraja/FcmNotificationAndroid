@@ -110,8 +110,7 @@ public class MainActivity extends AppCompatActivity implements FcmListener {
             LocalBroadcastManager.getInstance(this).sendBroadcast(pushNotification);
 
             // play notification sound
-            NotificationUtils notificationUtils = new NotificationUtils(getApplicationContext());
-            notificationUtils.playNotificationSound();
+            playNotificationSound();
         }
     }
 
@@ -137,8 +136,7 @@ public class MainActivity extends AppCompatActivity implements FcmListener {
                 LocalBroadcastManager.getInstance(this).sendBroadcast(pushNotification);
 
                 // play notification sound
-                NotificationUtils notificationUtils = new NotificationUtils(getApplicationContext());
-                notificationUtils.playNotificationSound();
+                playNotificationSound();
             } else {
                 // app is in background, show the notification in notification tray
                 Intent resultIntent = new Intent(getApplicationContext(), MainActivity.class);
@@ -158,6 +156,12 @@ public class MainActivity extends AppCompatActivity implements FcmListener {
             Log.e(TAG, "Json Exception: " + e.getMessage());
         }
     }
+
+    private void playNotificationSound() {
+        // play notification sound
+        new NotificationUtils(getApplicationContext()).playNotificationSound();
+    }
+
 
     /**
      * Showing notification with text only

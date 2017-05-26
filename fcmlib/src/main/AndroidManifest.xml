@@ -4,7 +4,7 @@
     <application android:name=".FcmLibApp"
         android:label="@string/app_name"
         android:supportsRtl="true">
-        <!-- Firebase Notifications -->
+        <!-- Fire base Notifications -->
         <service android:name=".service.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />

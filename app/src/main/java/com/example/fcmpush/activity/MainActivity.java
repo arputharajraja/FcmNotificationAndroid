@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements FcmListener {
         // Check if message contains a notification payload.
         if (remoteMessage.getNotification() != null) {
             Log.e(TAG, "Activity Notification Body: " + remoteMessage.getNotification().getBody());
+            Log.d(TAG, "Notification Click Action: " + remoteMessage.getNotification().getClickAction());
             handleNotification(remoteMessage.getNotification().getBody());
         }
 

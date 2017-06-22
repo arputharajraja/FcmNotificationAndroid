@@ -4,4 +4,5 @@
     <string name="title_main_activity">FCM Notifications</string>
     <string name="text_fcm">FCM Reg Id: </string>
     <string name="text_fcm_reg_error">Firebase Reg Id is not received yet!</string>
+    <string name="title_activity_second">SecondActivity</string>
 </resources>
